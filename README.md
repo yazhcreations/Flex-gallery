@@ -18,7 +18,7 @@ On clicking an image card, a full-screen popup (lightbox) appears with the enlar
 - Vanilla JavaScript
 
 ## 🚀 Live Demo
-👉 [Click to View on GitHub Pages](https://yazhcreations.github.io/flex-gallery)
+👉 [Click to View on GitHub Pages](https://yazhcreations.github.io/Flex-gallery/)
 
 ## 📁 Project Structure
 flex-gallery/
