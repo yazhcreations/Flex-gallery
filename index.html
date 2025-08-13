@@ -50,12 +50,21 @@
         <div class="text">Beach</div>
       </div>
       <div class="card">
-      <img src="https://wallpaper-house.com/data/out/8/wallpaper2you_219710.jpg" width="192" height="120" />
+        <img
+          src="https://wallpaper-house.com/data/out/8/wallpaper2you_219710.jpg"
+          width="192"
+          height="120"
+        />
         <div class="text">Rain</div>
       </div>
     </div>
-    <div id="popupOverlay" class="overlay hidden">
-      <span class="close">&times;</span>
+    <div
+      id="popupOverlay"
+      class="overlay hidden"
+      role="dialog"
+      aria-modal="true"
+    >
+      <span class="close" aria-label="Close image" tabindex="0">&times;</span>
       <img class="popup-img" src="" alt="Enlarged" />
     </div>
 
@@ -69,6 +78,7 @@
         img.addEventListener("click", () => {
           popupImg.src = img.src;
           overlay.classList.remove("hidden");
+          closeBtn.focus();
         });
       });
 
@@ -76,9 +86,18 @@
         overlay.classList.add("hidden");
       });
 
-      // Optional: click outside image to close
+
       overlay.addEventListener("click", (e) => {
         if (e.target === overlay) {
+          overlay.classList.add("hidden");
+        }
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          overlay.classList.add("hidden");
+        }
+        if (e.key === "Enter" && document.activeElement === closeBtn) {
           overlay.classList.add("hidden");
         }
       });
